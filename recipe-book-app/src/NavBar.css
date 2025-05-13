@@ -1,0 +1,14 @@
+#logo1 {
+    width: 100px;
+    height: 100px;
+}
+
+#NavBar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: bisque;
+    margin: 0;
+
+}
