@@ -1,0 +1,23 @@
+#Recetas {
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+} 
+
+img {
+    height: auto;
+    width: 200px;
+    padding: 20px;
+}
+
+#cada-recetas{
+    background-color: brown;
+    border: solid;
+    display: flex;
+    flex-direction: row;
+}
+
+#datos-recetas{
+    display: flex;
+    flex-direction: column;
+}
