@@ -10,7 +10,11 @@ function SideBar() {
         </Link>
 
         <Link to="/about">
-        <li>Acerca De</li>
+          <li>Acerca De</li>
+        </Link>
+
+        <Link to="/añadirReceta">
+          <li>Añadir receta</li>
         </Link>
       </ul>
     </div>

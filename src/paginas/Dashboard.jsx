@@ -1,14 +1,12 @@
 import React from "react";
 import Recetas from "../componentes/Recetas";
 
-function Dashboard(props) {
-
+function Dashboard({ listaRecetas, setListaRecetas }) {
   return (
-  <div>
-    <Recetas />
-    
-  </div>
-  )
+    <div>
+      <Recetas listaRecetas={listaRecetas} setListaRecetas={setListaRecetas} />
+    </div>
+  );
 }
 
 export default Dashboard;
