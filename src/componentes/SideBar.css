@@ -8,6 +8,8 @@
   justify-content: center;
   font-family: "Urbanist", sans-serif;
   font-size: 24px;
+  min-width: 250px;
+  max-width: 250px;
 }
 
 ul {
