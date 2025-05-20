@@ -2,7 +2,6 @@ import NavBar from "./componentes/NavBar";
 import "./App.css";
 import Footer from "./componentes/Footer";
 import SideBar from "./componentes/SideBar";
-import Recetas from "./componentes/Recetas";
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "./paginas/Dashboard";
 import Paginadetalles from "./paginas/Paginadetalles";
@@ -12,6 +11,7 @@ import recetasArr from "/src/data/recipes.json";
 import Formulario from "./paginas/Formulario";
 import { useState } from "react";
 import EditFormulario from "./paginas/EditFormulario";
+import Recetas from "./componentes/Recetas";
 
 function App() {
   const [listaRecetas, setListaRecetas] = useState(recetasArr);
@@ -51,7 +51,7 @@ function App() {
             }
           />
           <Route
-            path="/editFormulario"
+            path={`/editFormulario/:idEditReceta`}
             element={
               <EditFormulario
                 listaRecetas={listaRecetas}

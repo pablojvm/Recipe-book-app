@@ -1,10 +1,7 @@
-import { useState } from "react";
-import recetasArr from "/src/data/recipes.json";
-import "../componentes/Recetas.css";
 import RecetasCard from "./RecetasCard";
+import './Recetas.css'
 
 function Recetas({ listaRecetas, setListaRecetas }) {
-  // const [listaRecetas, setListaRecetas] = useState(recetasArr);
   const handleEliminarReceta = (index) => {
     const cloneState = [...listaRecetas];
     cloneState.splice(index, 1);
@@ -19,6 +16,7 @@ function Recetas({ listaRecetas, setListaRecetas }) {
             key={index}
             receta={eachReceta}
             onDelete={() => handleEliminarReceta(index)}
+            index={index}
           />
         );
       })}

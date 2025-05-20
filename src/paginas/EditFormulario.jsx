@@ -1,16 +1,16 @@
-import { useNavigate } from "react-router-dom";
+import { Links, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-function EditFormulario(listaRecetas, setListaRecetas) {
-  const [receta, setReceta] = useState(listaRecetas.cartaReceta.name);
-  const [calorias, setCalorias] = useState(listaRecetas.cartaReceta.calories);
-  const [porciones, setPorciones] = useState(listaRecetas.cartaReceta.servings);
-  const [descripcion, setDescripcion] = useState(
-    listaRecetas.cartaReceta.description
-  );
-  const [imagen, setImagen] = useState(listaRecetas.cartaReceta.image);
+function EditFormulario(listaRecetas, setListaRecetas, index) {
+  console.log(index)
+  const [name, setName] = useState(listaRecetas[index]);
+  const [calorias, setCalorias] = useState("");
+  const [porciones, setPorciones] = useState("");
+  const [descripcion, setDescripcion] = useState("");
+  const [imagen, setImagen] = useState("");
 
-  const handleReceta = (event) => {
-    setReceta(event.target.value);
+  const handleName = (event) => {
+    setName(event.target.value);
   };
 
   const handleCalorias = (event) => {
@@ -35,32 +35,33 @@ function EditFormulario(listaRecetas, setListaRecetas) {
     event.preventDefault();
 
     const newReceta = {
-      receta: receta,
+      name: name,
       calorias: calorias,
       porciones: porciones,
       descripcion: descripcion,
       imagen: imagen,
+      id: String(Math.floor(Math.random() * 10000000)),
     };
 
     setListaRecetas((valorActual) => {
       let nuevoEstado = [...valorActual, newReceta];
-      navigate("/");
       return nuevoEstado;
     });
+    navigate("/");
   };
 
   return (
     <div>
-      <h1>Añadir Receta</h1>
+      <h1>Editar Receta</h1>
 
       <form onSubmit={handleAddRecetas}>
-        <label htmlFor="receta">Receta:</label>
+        <label htmlFor="name">Nombre:</label>
         <input
           type="text"
-          name="receta"
-          id="receta"
-          onChange={handleReceta}
-          value={receta}
+          name="name"
+          id="name"
+          onChange={handleName}
+          value={name}
         />
 
         <label htmlFor="calorias">Calorias:</label>
@@ -99,7 +100,7 @@ function EditFormulario(listaRecetas, setListaRecetas) {
           value={imagen}
         />
 
-        <button>Añadir!</button>
+        <button>Editar!</button>
       </form>
     </div>
   );

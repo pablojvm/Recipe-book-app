@@ -2,14 +2,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Formulario({ setListaRecetas }) {
-  const [receta, setReceta] = useState("");
-  const [calorias, setCalorias] = useState(0);
-  const [porciones, setPorciones] = useState(0);
+  const [name, setName] = useState("");
+  const [calorias, setCalorias] = useState("");
+  const [porciones, setPorciones] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [imagen, setImagen] = useState("");
 
-  const handleReceta = (event) => {
-    setReceta(event.target.value);
+  const handleName = (event) => {
+    setName(event.target.value);
   };
 
   const handleCalorias = (event) => {
@@ -34,18 +34,19 @@ function Formulario({ setListaRecetas }) {
     event.preventDefault();
 
     const newReceta = {
-      receta: receta,
+      name: name,
       calorias: calorias,
       porciones: porciones,
       descripcion: descripcion,
       imagen: imagen,
+      id: String(Math.floor(Math.random() * 10000000))
     };
 
     setListaRecetas((valorActual) => {
       let nuevoEstado = [...valorActual, newReceta];
-      navigate("/");
       return nuevoEstado;
     });
+    navigate("/");
   };
 
   return (
@@ -53,13 +54,13 @@ function Formulario({ setListaRecetas }) {
       <h1>Añadir Receta</h1>
 
       <form onSubmit={handleAddRecetas}>
-        <label htmlFor="receta">Receta:</label>
+        <label htmlFor="name">Receta:</label>
         <input
           type="text"
-          name="receta"
-          id="receta"
-          onChange={handleReceta}
-          value={receta}
+          name="name"
+          id="name"
+          onChange={handleName}
+          value={name}
         />
 
         <label htmlFor="calorias">Calorias:</label>

@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 function Paginadetalles({ listaRecetas, setListaRecetas }) {
   const params = useParams();
@@ -7,9 +7,7 @@ function Paginadetalles({ listaRecetas, setListaRecetas }) {
   const cartaReceta = listaRecetas.find((eachReceta) => {
     if (eachReceta.id === params.idReceta) {
       return true;
-    } //else {
-    //   return <p>No se encontró la receta</p>;
-    // }
+    } 
   });
 
   const handleEliminarReceta = (idReceta) => {
@@ -18,7 +16,12 @@ function Paginadetalles({ listaRecetas, setListaRecetas }) {
     navigate("/");
   };
 
-  const handleEditRecipe = () => {};
+  if (!cartaReceta) {
+    return <h3>No hay receta</h3>
+  }
+
+
+
   return (
     <div>
       Receta:{cartaReceta.name}
@@ -29,7 +32,9 @@ function Paginadetalles({ listaRecetas, setListaRecetas }) {
       <button onClick={() => handleEliminarReceta(cartaReceta.id)}>
         Delete
       </button>
-      <button onClick={handleEditRecipe}>Edit Recipe</button>
+      <Link to={`/editFormulario/${cartaReceta.id}`}>
+      <button>Edit Recipe</button>
+      </Link>
     </div>
   );
 }
@@ -45,3 +50,8 @@ export default Paginadetalles;
 //       return <p>No se encontró la receta</p>;
 //     }
 //   });
+
+
+//else {
+    //   return <p>No se encontró la receta</p>;
+    // }
