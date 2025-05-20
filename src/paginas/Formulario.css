@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap");
+
+form {
+  border-color: black;
+
+  font-family: "Urbanist", sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+#addreceta {
+  width: 100%;
+  padding: 60px 30px;
+  color: black;
+  font-size: 24px;
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+
+input {
+  width: 300px; /* largeur */
+  height: 40px; /* hauteur */
+  padding: 10px; /* espace intérieur */
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  padding-bottom: px;
+}
+
+label {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+button {
+  background-color: #7b3c15;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 8px;
+  font-size: 24px;
+  color: white;
+}

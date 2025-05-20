@@ -1,5 +1,5 @@
 import RecetasCard from "./RecetasCard";
-import './Recetas.css'
+import "./Recetas.css";
 
 function Recetas({ listaRecetas, setListaRecetas }) {
   const handleEliminarReceta = (index) => {

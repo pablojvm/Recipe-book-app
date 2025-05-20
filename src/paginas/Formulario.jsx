@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../paginas/Formulario.css";
 
 function Formulario({ setListaRecetas }) {
   const [name, setName] = useState("");
@@ -39,7 +40,7 @@ function Formulario({ setListaRecetas }) {
       porciones: porciones,
       descripcion: descripcion,
       imagen: imagen,
-      id: String(Math.floor(Math.random() * 10000000))
+      id: String(Math.floor(Math.random() * 10000000)),
     };
 
     setListaRecetas((valorActual) => {
@@ -50,10 +51,9 @@ function Formulario({ setListaRecetas }) {
   };
 
   return (
-    <div>
-      <h1>Añadir Receta</h1>
-
+    <div id="addreceta">
       <form onSubmit={handleAddRecetas}>
+        <h2>Añadir Receta</h2>
         <label htmlFor="name">Receta:</label>
         <input
           type="text"

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap");
+
+#ctn-desarolladores {
+  font-family: "Urbanist", sans-serif;
+}
+
+#logoGit2 {
+  height: 20px;
+  width: auto;
+}
+
+.git {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+#LinkedIn {
+  height: 20px;
+  width: auto;
+}

@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap");
+
+#container-detalle {
+  border-color: azure;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  font-family: "Urbanist", sans-serif;
+  align-items: center;
+}
+
+button {
+  padding: 20px;
+  margin: 40px;
+}
+
+#delete-btn {
+  background-color: red;
+}

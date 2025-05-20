@@ -1,15 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
+
 #Footer {
-    background-color: bisque;
-    color: black;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 60px;
+  background-color: #f4faec;
+  color: black;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  font-family: "Urbanist", sans-serif;
 }
 
 a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
+}
 
+#logoGit {
+  height: 20px;
+  width: auto;
+  margin-right: 8px;
 }
