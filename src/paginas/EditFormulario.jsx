@@ -1,9 +1,9 @@
-import { Links, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function EditFormulario(listaRecetas, setListaRecetas, index) {
-  console.log(index)
-  const [name, setName] = useState(listaRecetas[index]);
+function EditFormulario({ listaRecetas, setListaRecetas, index }) {
+  console.log(index);
+  const [name, setName] = useState(listaRecetas[index].name);
   const [calorias, setCalorias] = useState("");
   const [porciones, setPorciones] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -31,22 +31,23 @@ function EditFormulario(listaRecetas, setListaRecetas, index) {
 
   const navigate = useNavigate();
 
-  const handleAddRecetas = (event) => {
+  const handleEditRecetas = (event) => {
     event.preventDefault();
 
-    const newReceta = {
-      name: name,
-      calorias: calorias,
-      porciones: porciones,
-      descripcion: descripcion,
-      imagen: imagen,
-      id: String(Math.floor(Math.random() * 10000000)),
+    const recetaEditada = {
+      ...listaRecetas[index],
+      name,
+      calorias,
+      porciones,
+      descripcion,
+      imagen,
     };
 
-    setListaRecetas((valorActual) => {
-      let nuevoEstado = [...valorActual, newReceta];
-      return nuevoEstado;
-    });
+    const nuevasRecetas = [...listaRecetas];
+    nuevasRecetas[index] = recetaEditada;
+
+    setListaRecetas(nuevasRecetas);
+
     navigate("/");
   };
 
@@ -54,7 +55,7 @@ function EditFormulario(listaRecetas, setListaRecetas, index) {
     <div>
       <h1>Editar Receta</h1>
 
-      <form onSubmit={handleAddRecetas}>
+      <form onSubmit={handleEditRecetas}>
         <label htmlFor="name">Nombre:</label>
         <input
           type="text"
@@ -91,7 +92,7 @@ function EditFormulario(listaRecetas, setListaRecetas, index) {
           value={descripcion}
         />
 
-        <label htmlFor="descripcion">Imagen:</label>
+        <label htmlFor="imagen">Imagen:</label>
         <input
           type="url"
           name="imagen"

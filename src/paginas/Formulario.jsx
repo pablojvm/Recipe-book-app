@@ -39,7 +39,7 @@ function Formulario({ setListaRecetas }) {
       calorias: calorias,
       porciones: porciones,
       descripcion: descripcion,
-      imagen: imagen,
+      imagen: imagen || "/error404.avif",
       id: String(Math.floor(Math.random() * 10000000)),
     };
 

@@ -38,6 +38,7 @@ function App() {
               <Recetas
                 listaRecetas={listaRecetas}
                 setListaRecetas={setListaRecetas}
+                setIndexEditar={setIndexEditar}
               />
             }
           />
