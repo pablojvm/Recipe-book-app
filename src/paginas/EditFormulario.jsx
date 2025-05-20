@@ -1,12 +1,13 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Formulario({ setListaRecetas }) {
-  const [receta, setReceta] = useState("");
-  const [calorias, setCalorias] = useState(0);
-  const [porciones, setPorciones] = useState(0);
-  const [descripcion, setDescripcion] = useState("");
-  const [imagen, setImagen] = useState("");
+function EditFormulario(listaRecetas, setListaRecetas) {
+  const [receta, setReceta] = useState(listaRecetas.cartaReceta.name);
+  const [calorias, setCalorias] = useState(listaRecetas.cartaReceta.calories);
+  const [porciones, setPorciones] = useState(listaRecetas.cartaReceta.servings);
+  const [descripcion, setDescripcion] = useState(
+    listaRecetas.cartaReceta.description
+  );
+  const [imagen, setImagen] = useState(listaRecetas.cartaReceta.image);
 
   const handleReceta = (event) => {
     setReceta(event.target.value);
@@ -104,4 +105,4 @@ function Formulario({ setListaRecetas }) {
   );
 }
 
-export default Formulario;
+export default EditFormulario;

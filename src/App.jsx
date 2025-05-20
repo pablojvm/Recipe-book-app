@@ -11,6 +11,7 @@ import NotFound from "./paginas/NotFound";
 import recetasArr from "/src/data/recipes.json";
 import Formulario from "./paginas/Formulario";
 import { useState } from "react";
+import EditFormulario from "./paginas/EditFormulario";
 
 function App() {
   const [listaRecetas, setListaRecetas] = useState(recetasArr);
@@ -44,6 +45,15 @@ function App() {
             path="/recetas/:idReceta"
             element={
               <Paginadetalles
+                listaRecetas={listaRecetas}
+                setListaRecetas={setListaRecetas}
+              />
+            }
+          />
+          <Route
+            path="/editFormulario"
+            element={
+              <EditFormulario
                 listaRecetas={listaRecetas}
                 setListaRecetas={setListaRecetas}
               />
